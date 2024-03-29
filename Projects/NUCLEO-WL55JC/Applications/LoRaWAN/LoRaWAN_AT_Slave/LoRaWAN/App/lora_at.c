@@ -194,11 +194,11 @@ void AT_event_join(LmHandlerJoinParams_t *params)
   /* USER CODE END AT_event_join_1 */
   if ((params != NULL) && (params->Status == LORAMAC_HANDLER_SUCCESS))
   {
-    AT_PRINTF("+EVT:JOINED\r\n");
+    AT_PRINTF("+QEVT:JOINED\r\n");
   }
   else
   {
-    AT_PRINTF("+EVT:JOIN FAILED\r\n");
+    AT_PRINTF("+QEVT:JOIN FAILED\r\n");
   }
   /* USER CODE BEGIN AT_event_join_2 */
 
@@ -230,7 +230,7 @@ void AT_event_receive(LmHandlerAppData_t *appData, LmHandlerRxParams_t *params)
       }
 
       /*asynchronous notification to the host*/
-      AT_PRINTF("+EVT:%d:%02X:", appData->Port, ReceivedDataSize);
+      AT_PRINTF("+QEVT:%d:%02X:", appData->Port, ReceivedDataSize);
 
       for (uint8_t i = 0; i < ReceivedDataSize; i++)
       {
@@ -242,7 +242,7 @@ void AT_event_receive(LmHandlerAppData_t *appData, LmHandlerRxParams_t *params)
 
   if ((params != NULL) && (params->RxSlot < RX_SLOT_NONE))
   {
-    AT_PRINTF("+EVT:RX_%s, PORT %d, DR %d, RSSI %d, SNR %d", slotStrings[params->RxSlot], RxPort,
+    AT_PRINTF("+QEVT:RX_%s, PORT %d, DR %d, RSSI %d, SNR %d", slotStrings[params->RxSlot], RxPort,
               params->Datarate, params->Rssi, params->Snr);
     if (params->LinkCheck == true)
     {
@@ -263,7 +263,7 @@ void AT_event_confirm(LmHandlerTxParams_t *params)
   /* USER CODE END AT_event_confirm_1 */
   if ((params != NULL) && (params->MsgType == LORAMAC_HANDLER_CONFIRMED_MSG) && (params->AckReceived != 0))
   {
-    AT_PRINTF("+EVT:SEND_CONFIRMED\r\n");
+    AT_PRINTF("+QEVT:SEND_CONFIRMED\r\n");
   }
   /* USER CODE BEGIN AT_event_confirm_2 */
 
@@ -275,7 +275,7 @@ void AT_event_ClassUpdate(DeviceClass_t deviceClass)
   /* USER CODE BEGIN AT_event_ClassUpdate_1 */
 
   /* USER CODE END AT_event_ClassUpdate_1 */
-  AT_PRINTF("+EVT:SWITCH_TO_CLASS_%c\r\n", "ABC"[deviceClass]);
+  AT_PRINTF("+QEVT:SWITCH_TO_CLASS_%c\r\n", "ABC"[deviceClass]);
   /* USER CODE BEGIN AT_event_ClassUpdate_2 */
 
   /* USER CODE END AT_event_ClassUpdate_2 */
@@ -293,12 +293,12 @@ void AT_event_Beacon(LmHandlerBeaconParams_t *params)
       default:
       case LORAMAC_HANDLER_BEACON_LOST:
       {
-        AT_PRINTF("+EVT:BEACON_LOST\r\n");
+        AT_PRINTF("+QEVT:BEACON_LOST\r\n");
         break;
       }
       case LORAMAC_HANDLER_BEACON_RX:
       {
-        AT_PRINTF("+EVT:RX_BC, DR %d, RSSI %d, SNR %d, FQ %d, TIME %d, DESC %d, "
+        AT_PRINTF("+QEVT:RX_BC, DR %d, RSSI %d, SNR %d, FQ %d, TIME %d, DESC %d, "
                   "INFO %02X%02X%02X,%02X%02X%02X\r\n",
                   params->Info.Datarate, params->Info.Rssi, params->Info.Snr, params->Info.Frequency,
                   params->Info.Time.Seconds, params->Info.GwSpecific.InfoDesc,
@@ -309,7 +309,7 @@ void AT_event_Beacon(LmHandlerBeaconParams_t *params)
       }
       case LORAMAC_HANDLER_BEACON_NRX:
       {
-        AT_PRINTF("+EVT:BEACON_NOT_RECEIVED\r\n");
+        AT_PRINTF("+QEVT:BEACON_NOT_RECEIVED\r\n");
         break;
       }
     }
@@ -415,12 +415,12 @@ ATEerror_t AT_verbose_set(const char *param)
   /* read and set the verbose level */
   if (1 != tiny_sscanf(buf, "%u", &lvl_nb))
   {
-    AT_PRINTF("AT+VL: verbose level is not well set\r\n");
+    AT_PRINTF("AT+QVL: verbose level is not well set\r\n");
     return AT_PARAM_ERROR;
   }
   if ((lvl_nb > VLEVEL_H) || (lvl_nb < VLEVEL_OFF))
   {
-    AT_PRINTF("AT+VL: verbose level out of range => 0(VLEVEL_OFF) to 3(VLEVEL_H)\r\n");
+    AT_PRINTF("AT+QVL: verbose level out of range => 0(VLEVEL_OFF) to 3(VLEVEL_H)\r\n");
     return AT_PARAM_ERROR;
   }
 

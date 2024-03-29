@@ -76,63 +76,63 @@ typedef enum eATEerror
 
 /* AT Command strings. Commands start with AT */
 /* General commands */
-#define AT_VER        "+VER"
-#define AT_VL         "+VL"
-#define AT_LTIME      "+LTIME"
+#define AT_VER        "+QVER"
+#define AT_VL         "+QVL"
+#define AT_LTIME      "+QLTIME"
 #define AT_RESET      "Z"
 
 /* Context Store */
-#define AT_RFS        "+RFS"
-#define AT_CS         "+CS"
+#define AT_RFS        "+QRFS"
+#define AT_CS         "+QCS"
 
 /* Keys, IDs and EUIs management commands */
-#define AT_JOINEUI    "+APPEUI" /*to match with V1.0.x specification- For V1.1.x "+APPEUI" will be replaced by "+JOINEUI"*/
-#define AT_NWKKEY     "+NWKKEY"
-#define AT_APPKEY     "+APPKEY"
-#define AT_NWKSKEY    "+NWKSKEY"
-#define AT_APPSKEY    "+APPSKEY"
-#define AT_DADDR      "+DADDR"
-#define AT_DEUI       "+DEUI"
-#define AT_NWKID      "+NWKID"
+#define AT_JOINEUI    "+QAPPEUI" /*to match with V1.0.x specification- For V1.1.x "+APPEUI" will be replaced by "+JOINEUI"*/
+#define AT_NWKKEY     "+QNWKKEY"
+#define AT_APPKEY     "+QAPPKEY"
+#define AT_NWKSKEY    "+QNWKSKEY"
+#define AT_APPSKEY    "+QAPPSKEY"
+#define AT_DADDR      "+QDADDR"
+#define AT_DEUI       "+QDEUI"
+#define AT_NWKID      "+QNWKID"
 
 /* LoRaWAN join and send data commands */
-#define AT_JOIN       "+JOIN"
-#define AT_LINKC      "+LINKC"
-#define AT_SEND       "+SEND"
+#define AT_JOIN       "+QJOIN"
+#define AT_LINKC      "+QLINKC"
+#define AT_SEND       "+QSEND"
 
 /* LoRaWAN network management commands */
-#define AT_ADR        "+ADR"
-#define AT_DR         "+DR"
-#define AT_BAND       "+BAND"
-#define AT_CLASS      "+CLASS"
-#define AT_DCS        "+DCS"
-#define AT_JN1DL      "+JN1DL"
-#define AT_JN2DL      "+JN2DL"
-#define AT_RX1DL      "+RX1DL"
-#define AT_RX2DL      "+RX2DL"
-#define AT_RX2DR      "+RX2DR"
-#define AT_RX2FQ      "+RX2FQ"
-#define AT_TXP        "+TXP"
-#define AT_PGSLOT     "+PGSLOT"
+#define AT_ADR        "+QADR"
+#define AT_DR         "+QDR"
+#define AT_BAND       "+QBAND"
+#define AT_CLASS      "+QCLASS"
+#define AT_DCS        "+QDCS"
+#define AT_JN1DL      "+QJN1DL"
+#define AT_JN2DL      "+QJN2DL"
+#define AT_RX1DL      "+QRX1DL"
+#define AT_RX2DL      "+QRX2DL"
+#define AT_RX2DR      "+QRX2DR"
+#define AT_RX2FQ      "+QRX2FQ"
+#define AT_TXP        "+QTXP"
+#define AT_PGSLOT     "+QPGSLOT"
 
 /* Radio tests commands */
-#define AT_TTONE      "+TTONE"
-#define AT_TRSSI      "+TRSSI"
-#define AT_TCONF      "+TCONF"
-#define AT_TTX        "+TTX"
-#define AT_TRX        "+TRX"
-#define AT_TTH        "+TTH"
-#define AT_TOFF       "+TOFF"
+#define AT_TTONE      "+QTTONE"
+#define AT_TRSSI      "+QTRSSI"
+#define AT_TCONF      "+QTCONF"
+#define AT_TTX        "+QTTX"
+#define AT_TRX        "+QTRX"
+#define AT_TTH        "+QTTH"
+#define AT_TOFF       "+QTOFF"
 
 /* Radio access commands */
-#define AT_REGW       "+REGW"
-#define AT_REGR       "+REGR"
+#define AT_REGW       "+QREGW"
+#define AT_REGR       "+QREGR"
 
 /* LoraWAN Certif command */
-#define AT_CERTIF     "+CERTIF"
+#define AT_CERTIF     "+QCERTIF"
 
 /* Information command */
-#define AT_BAT        "+BAT"
+#define AT_BAT        "+QBAT"
 
 /* USER CODE BEGIN EM */
 

@@ -314,7 +314,7 @@ void LoRaWAN_Init(void)
   UTIL_TIMER_Start(&JoinLedTimer);
 
   APP_PPRINTF("ATtention command interface\r\n");
-  APP_PPRINTF("AT? to list all available functions\r\n");
+  APP_PPRINTF("ATQ? to list all available functions\r\n");
 
   /* USER CODE END LoRaWAN_Init_Last */
 }

@@ -814,11 +814,11 @@ static void parse_cmd(const char *cmd)
   {
     status = AT_ERROR;
   }
-  else if (cmd[2] == '\0')
+  else if (cmd[2] == '\0' || (cmd[2] == 'Q' && cmd[3] == '\0'))
   {
     /* status = AT_OK; */
   }
-  else if (cmd[2] == '?')
+  else if (cmd[2] == '?' || (cmd[2] == 'Q' && cmd[3] == '?'))
   {
 #ifdef NO_HELP
 #else
