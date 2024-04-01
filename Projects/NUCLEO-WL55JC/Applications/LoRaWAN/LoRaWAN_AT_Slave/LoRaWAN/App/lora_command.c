@@ -658,7 +658,7 @@ void CMD_Process(void)
 
   while (charCount != 0)
   {
-#if 0 /* echo On    */
+#if 1 /* echo On    */
     AT_PPRINTF("%c", circBuffer[ridx]);
 #endif /* 0 */
 
